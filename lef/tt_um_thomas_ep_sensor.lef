@@ -313,13 +313,12 @@ MACRO tt_um_thomas_ep_sensor
         RECT 74.830 224.760 75.130 225.760 ;
     END
   END uo_out[7]
-  PIN VPWR
-    USE POWER ;
+  PIN VDPWR
     PORT
       LAYER met4 ;
         RECT 165.000 10.000 167.000 215.000 ;
     END
-  END VPWR
+  END VDPWR
   PIN VGND
     USE GROUND ;
     PORT
