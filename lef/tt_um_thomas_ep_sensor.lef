@@ -5,8 +5,8 @@ VERSION 5.7 ;
 MACRO tt_um_thomas_ep_sensor
   CLASS BLOCK ;
   FOREIGN tt_um_thomas_ep_sensor ;
-  ORIGIN -2.000 0.000 ;
-  SIZE 332.500 BY 225.760 ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 334.880 BY 225.760 ;
   PIN clk
     PORT
       LAYER met4 ;

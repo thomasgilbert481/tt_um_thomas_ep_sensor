@@ -11,11 +11,9 @@ project:
   tiles: "2x2"
 
   # How many analog pins does your project use?
-  # ua[0] is the V1 tank node (RF probe in/out).  ua[1] is the V2 tank
-  # buffered output.  ua[2..5] are TT-pin sites that the L1 spiral routing
-  # passes through, so they are silicon-tied to ua[0]; bench-wise you can
-  # drive V1 from any of ua[0..5].
-  analog_pins: 6
+  # ua[0] = V1 tank node (RF probe in).  ua[1] = V2 buffered output (peak-split).
+  # ua[2..7] are unused; the chip has no metal at those pin sites.
+  analog_pins: 2
   uses_3v3: false
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
@@ -59,12 +57,12 @@ pinout:
   uio[7]: ""
 
   # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
-  ua[0]: "V1 primary (V1 tank node; RF probe drive)"
-  ua[1]: "V2 buffered output (peak-split observation)"
-  ua[2]: "V1 alt (tied to V1 through L1 spiral routing)"
-  ua[3]: "V1 alt (tied to V1 through L1 spiral routing)"
-  ua[4]: "V1 alt (tied to V1 through L1 spiral routing)"
-  ua[5]: "V1 alt (tied to V1 through L1 spiral routing)"
+  ua[0]: "V1 (V1 LC tank node; RF probe drive, 50 ohm coupled)"
+  ua[1]: "V2 (V2 LC tank node, buffered output; observe peak split)"
+  ua[2]: ""
+  ua[3]: ""
+  ua[4]: ""
+  ua[5]: ""
 
 # Do not change!
 yaml_version: 6
