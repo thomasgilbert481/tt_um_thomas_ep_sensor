@@ -63,6 +63,9 @@ Verified by selectively deleting cell instances and re-running Magic:
 | NMOS-as-resistor substitution | Top NMOS goes subthreshold when divider drop < Vt; would need PMOS-on-top + careful sizing — multi-day rework. |
 | Notch metal at ua[5] site (TT pin sites) | Resolved Analog Pin Check ✅, no effect on Magic DRC. |
 | Trim `res_xhigh_po_0p35` outer urpm tabs (the 0.75 µm wide tab regions) | Same rule still fires from poly-derived URPM inside. |
+| Add full-cell-bbox URPM marker INSIDE each res cell definition | No effect — `mask-hints URPM` in `sky130A.tech` is hint-only, doesn't feed the rpm.1 width check. The rule fires on a derived layer computed entirely from the foundry cell's internal poly+xpc geometry. |
+| Substitute digital pins (ui_in/uio_*) for bias | Not viable — TT IO ring quantizes digital pins to 0/VDPWR via level shifters; can't pass analog voltage. |
+| Substitute n-well resistor (res_iso_pw, no poly markers) | Sheet R 3 kΩ/sq * min W 2.65 µm → 1.5 MΩ resistor needs ~1325 µm length, doesn't fit in remaining tile area. |
 
 ## Path forward (what we're asking TT)
 
